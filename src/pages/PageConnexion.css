@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Coordinateur de Vie - Styles des pages de connexion et d'inscription
+   ========================================================================== */
+
+.page-connexion,
+.page-inscription {
+  min-height: calc(100vh - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espacement-xl);
+  background: linear-gradient(135deg, var(--couleur-fond-principal) 0%, var(--couleur-secondaire-claire) 100%);
+}
+
+.conteneur-connexion,
+.conteneur-inscription {
+  width: 100%;
+  max-width: 480px;
+}
+
+.carte-connexion,
+.carte-inscription {
+  padding: var(--espacement-xxl);
+}
+
+.en-tete-connexion,
+.en-tete-inscription {
+  margin-bottom: var(--espacement-xl);
+}
+
+.icone-connexion,
+.icone-inscription {
+  font-size: 2.5rem;
+  color: var(--couleur-primaire);
+  margin-bottom: var(--espacement-md);
+  display: block;
+}
+
+.lien-inscription a,
+.lien-connexion a {
+  font-weight: 600;
+  color: var(--couleur-primaire);
+}
+
+/* Comptes de demonstration */
+.comptes-demo {
+  padding: var(--espacement-md);
+  background-color: var(--couleur-fond-section);
+  border-radius: var(--rayon-bordure-md);
+  border: 1px dashed var(--couleur-bordure);
+}
+
+.titre-demo {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--couleur-texte-leger);
+  margin-bottom: var(--espacement-sm);
+}
+
+.titre-demo i {
+  margin-right: 0.3rem;
+}
+
+.liste-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacement-sm);
+}
+
+/* Selecteur de type de profil */
+.selecteur-profil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacement-md);
+  margin-bottom: var(--espacement-xl);
+}
+
+.option-profil {
+  padding: var(--espacement-lg);
+  border: 2px solid var(--couleur-bordure);
+  border-radius: var(--rayon-bordure-md);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-rapide);
+  background: var(--couleur-fond-carte);
+}
+
+.option-profil:hover {
+  border-color: var(--couleur-primaire-claire);
+}
+
+.option-profil.selectionne {
+  border-color: var(--couleur-primaire);
+  background-color: rgba(123, 158, 135, 0.05);
+}
+
+.option-profil i {
+  font-size: 1.5rem;
+  color: var(--couleur-primaire);
+  margin-bottom: var(--espacement-sm);
+  display: block;
+}
+
+.option-profil span {
+  font-weight: 600;
+  font-size: 0.95rem;
+}

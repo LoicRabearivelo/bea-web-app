@@ -1,0 +1,231 @@
+/* ==========================================================================
+   Coordinateur de Vie - Styles de la page de suivi de sante
+   ========================================================================== */
+
+.page-suivi {
+  padding: var(--espacement-xl) 0;
+  min-height: calc(100vh - 65px);
+}
+
+.page-suivi > .conteneur > h1 {
+  font-size: 1.6rem;
+}
+
+.page-suivi > .conteneur > h1 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+.sous-titre-page {
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-lg);
+}
+
+.sous-titre-carte {
+  color: var(--couleur-texte-secondaire);
+  font-size: 0.95rem;
+  margin-bottom: var(--espacement-lg);
+}
+
+/* Selecteur de score */
+.selecteur-score {
+  display: flex;
+  align-items: center;
+  gap: var(--espacement-md);
+}
+
+.curseur-score {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--couleur-erreur) 0%, var(--couleur-avertissement) 50%, var(--couleur-succes) 100%);
+  outline: none;
+}
+
+.curseur-score::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--couleur-fond-carte);
+  border: 3px solid var(--couleur-primaire);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.valeur-score {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--couleur-primaire);
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Historique */
+.liste-historique {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-md);
+}
+
+.entree-historique {
+  padding: var(--espacement-md);
+  background-color: var(--couleur-fond-section);
+  border-radius: var(--rayon-bordure-sm);
+  border-left: 3px solid var(--couleur-primaire);
+}
+
+.entree-historique.entree-score-bas {
+  border-left-color: var(--couleur-erreur);
+}
+
+.entree-historique.entree-score-moyen {
+  border-left-color: var(--couleur-avertissement);
+}
+
+.entree-historique.entree-score-haut {
+  border-left-color: var(--couleur-succes);
+}
+
+.entree-en-tete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--espacement-sm);
+}
+
+.texte-petit {
+  font-size: 0.85rem;
+  color: var(--couleur-texte-secondaire);
+  font-weight: 600;
+}
+
+.entree-detail {
+  font-size: 0.88rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: 0.3rem;
+}
+
+.entree-detail i {
+  width: 18px;
+  margin-right: 0.3rem;
+  color: var(--couleur-primaire);
+}
+
+.entree-notes {
+  font-size: 0.88rem;
+  color: var(--couleur-texte-secondaire);
+  font-style: italic;
+  margin-top: var(--espacement-sm);
+  padding-top: var(--espacement-sm);
+  border-top: 1px solid var(--couleur-bordure-legere);
+}
+
+.entree-symptomes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacement-xs);
+  margin-top: var(--espacement-sm);
+}
+
+/* Message de soutien */
+.message-soutien {
+  display: flex;
+  gap: var(--espacement-md);
+  padding: var(--espacement-md);
+  background: linear-gradient(135deg, rgba(123, 158, 135, 0.08), rgba(123, 158, 135, 0.03));
+  border-radius: var(--rayon-bordure-md);
+  border: 1px solid var(--couleur-primaire-claire);
+}
+
+.message-soutien > i {
+  font-size: 1.3rem;
+  color: var(--couleur-primaire);
+  min-width: 24px;
+  margin-top: 0.2rem;
+}
+
+.message-soutien p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+
+/* Programme dietetique */
+.objectif-diet {
+  display: flex;
+  gap: var(--espacement-md);
+  align-items: flex-start;
+  padding: var(--espacement-lg);
+  background-color: var(--couleur-fond-section);
+  border-radius: var(--rayon-bordure-md);
+}
+
+.objectif-diet > i {
+  font-size: 1.2rem;
+  color: var(--couleur-primaire);
+  margin-top: 0.2rem;
+}
+
+.objectif-diet p {
+  margin-bottom: 0;
+}
+
+.liste-recommandations-complete {
+  list-style: none;
+  padding: 0;
+}
+
+.liste-recommandations-complete li {
+  padding: var(--espacement-md) 0;
+  font-size: 0.95rem;
+  color: var(--couleur-texte-secondaire);
+  border-bottom: 1px solid var(--couleur-bordure-legere);
+  display: flex;
+  gap: var(--espacement-md);
+  align-items: flex-start;
+}
+
+.liste-recommandations-complete li:last-child {
+  border-bottom: none;
+}
+
+.liste-recommandations-complete li i {
+  color: var(--couleur-succes);
+  margin-top: 0.2rem;
+}
+
+/* Points de suivi post-natal */
+.liste-points-suivi {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-lg);
+}
+
+.point-suivi {
+  display: flex;
+  gap: var(--espacement-lg);
+  align-items: flex-start;
+  padding: var(--espacement-lg);
+  background-color: var(--couleur-fond-section);
+  border-radius: var(--rayon-bordure-md);
+}
+
+.point-suivi > i {
+  font-size: 1.3rem;
+  color: var(--couleur-primaire);
+  min-width: 24px;
+  margin-top: 0.2rem;
+}
+
+.point-suivi h4 {
+  margin-bottom: var(--espacement-xs);
+  font-size: 1rem;
+}
+
+.point-suivi p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}

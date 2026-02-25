@@ -1,0 +1,354 @@
+/* ==========================================================================
+   Coordinateur de Vie - Styles de la page annuaire des professionnels
+   ========================================================================== */
+
+.page-annuaire {
+  padding: var(--espacement-xl) 0;
+  min-height: calc(100vh - 65px);
+}
+
+.page-annuaire > .conteneur > h1 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+/* Barre de filtres */
+.barre-filtres {
+  margin-bottom: var(--espacement-xl);
+}
+
+.grille-filtres {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: var(--espacement-md);
+  align-items: flex-end;
+}
+
+.champ-avec-icone {
+  position: relative;
+}
+
+.champ-avec-icone i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--couleur-texte-secondaire);
+}
+
+.champ-avec-icone input {
+  padding-left: 38px;
+}
+
+.actions-filtre {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Compteur resultats */
+.compteur-resultats {
+  font-size: 0.9rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-md);
+  font-weight: 600;
+}
+
+/* Carte professionnel */
+.liste-professionnels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-lg);
+}
+
+.carte-professionnel {
+  transition: box-shadow 0.2s ease;
+}
+
+.carte-professionnel:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.en-tete-professionnel {
+  display: flex;
+  gap: var(--espacement-lg);
+  margin-bottom: var(--espacement-md);
+}
+
+.avatar-professionnel {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--couleur-primaire), var(--couleur-primaire-foncee));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-professionnel i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.infos-professionnel h3 {
+  margin-bottom: var(--espacement-xs);
+  font-size: 1.15rem;
+}
+
+.infos-professionnel .badge {
+  margin-bottom: var(--espacement-xs);
+  display: inline-block;
+}
+
+.localisation-professionnel {
+  font-size: 0.88rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-xs);
+}
+
+.localisation-professionnel i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-xs);
+}
+
+.note-professionnel {
+  display: flex;
+  align-items: center;
+  gap: var(--espacement-xs);
+}
+
+.etoile-pleine,
+.etoile-demi {
+  color: #f0ad4e;
+  font-size: 0.85rem;
+}
+
+.etoile-vide {
+  color: #ddd;
+  font-size: 0.85rem;
+}
+
+.texte-note {
+  font-size: 0.82rem;
+  color: var(--couleur-texte-secondaire);
+  margin-left: var(--espacement-xs);
+}
+
+.description-professionnel {
+  font-size: 0.92rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-md);
+  line-height: 1.6;
+}
+
+.actions-professionnel {
+  display: flex;
+  gap: var(--espacement-md);
+  flex-wrap: wrap;
+}
+
+/* Details deplies */
+.details-professionnel {
+  border-top: 1px solid var(--couleur-bordure-legere);
+  padding-top: var(--espacement-lg);
+  margin-top: var(--espacement-md);
+}
+
+.grille-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacement-lg);
+  margin-bottom: var(--espacement-lg);
+}
+
+.bloc-detail h4 {
+  font-size: 0.95rem;
+  margin-bottom: var(--espacement-sm);
+  color: var(--couleur-texte-principal);
+}
+
+.bloc-detail h4 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-xs);
+}
+
+.bloc-detail p {
+  font-size: 0.88rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-xs);
+}
+
+.liste-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacement-xs);
+}
+
+/* Avis */
+.section-avis h4 {
+  font-size: 1rem;
+  margin-bottom: var(--espacement-md);
+}
+
+.section-avis h4 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+.avis-element {
+  padding: var(--espacement-md);
+  background-color: var(--couleur-fond-section);
+  border-radius: var(--rayon-bordure-sm);
+  margin-bottom: var(--espacement-md);
+}
+
+.en-tete-avis {
+  display: flex;
+  align-items: center;
+  gap: var(--espacement-md);
+  margin-bottom: var(--espacement-sm);
+  flex-wrap: wrap;
+}
+
+.auteur-avis {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.date-avis {
+  font-size: 0.82rem;
+  color: var(--couleur-texte-secondaire);
+  margin-left: auto;
+}
+
+.commentaire-avis {
+  font-size: 0.9rem;
+  color: var(--couleur-texte-secondaire);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Message vide */
+.message-vide {
+  text-align: center;
+  padding: var(--espacement-xxl) var(--espacement-xl);
+}
+
+.message-vide > i {
+  font-size: 2.5rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-md);
+}
+
+.message-vide h3 {
+  margin-bottom: var(--espacement-sm);
+}
+
+.message-vide p {
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-lg);
+}
+
+/* Modale de rendez-vous */
+.modale-superposition {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--espacement-md);
+}
+
+.modale-contenu {
+  background-color: var(--couleur-fond-carte);
+  border-radius: var(--rayon-bordure-lg);
+  padding: var(--espacement-xl);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.bouton-fermer-modale {
+  position: absolute;
+  top: var(--espacement-md);
+  right: var(--espacement-md);
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--couleur-texte-secondaire);
+  padding: var(--espacement-xs);
+}
+
+.modale-contenu h2 {
+  font-size: 1.3rem;
+  margin-bottom: var(--espacement-xs);
+}
+
+.modale-contenu h2 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+.info-rdv-pro {
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-lg);
+  font-size: 0.95rem;
+}
+
+.bouton-pleine-largeur {
+  width: 100%;
+  justify-content: center;
+}
+
+.message-succes {
+  display: flex;
+  gap: var(--espacement-md);
+  padding: var(--espacement-lg);
+  background-color: rgba(92, 184, 92, 0.1);
+  border-radius: var(--rayon-bordure-md);
+  border: 1px solid rgba(92, 184, 92, 0.3);
+}
+
+.message-succes > i {
+  color: var(--couleur-succes);
+  font-size: 1.3rem;
+}
+
+.message-succes p {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grille-filtres {
+    grid-template-columns: 1fr;
+  }
+
+  .en-tete-professionnel {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .localisation-professionnel {
+    justify-content: center;
+  }
+
+  .note-professionnel {
+    justify-content: center;
+  }
+
+  .actions-professionnel {
+    justify-content: center;
+  }
+
+  .grille-details {
+    grid-template-columns: 1fr;
+  }
+}

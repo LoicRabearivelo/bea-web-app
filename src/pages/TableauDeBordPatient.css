@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Coordinateur de Vie - Styles du tableau de bord patient
+   ========================================================================== */
+
+.tableau-de-bord-patient {
+  padding: var(--espacement-xl) 0;
+  min-height: calc(100vh - 65px);
+}
+
+/* Section de bienvenue */
+.carte-bienvenue {
+  background: linear-gradient(135deg, var(--couleur-primaire-claire) 0%, var(--couleur-primaire) 100%);
+  color: var(--couleur-texte-inverse);
+  border: none;
+}
+
+.bienvenue-contenu {
+  display: flex;
+  gap: var(--espacement-xl);
+  align-items: flex-start;
+}
+
+.bienvenue-icone {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  border-radius: var(--rayon-bordure-rond);
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bienvenue-icone i {
+  font-size: 1.8rem;
+  color: var(--couleur-texte-inverse);
+}
+
+.carte-bienvenue h1 {
+  color: var(--couleur-texte-inverse);
+  font-size: 1.4rem;
+  margin-bottom: var(--espacement-sm);
+}
+
+.bienvenue-description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  margin-bottom: var(--espacement-md);
+}
+
+.bienvenue-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacement-xs);
+}
+
+.bienvenue-badges .badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--couleur-texte-inverse);
+  font-size: 0.75rem;
+}
+
+/* Raccourcis rapides */
+.grille-raccourcis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--espacement-md);
+}
+
+.carte-raccourci {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacement-sm);
+  padding: var(--espacement-lg);
+  text-decoration: none;
+  text-align: center;
+  transition: var(--transition-moyenne);
+  cursor: pointer;
+}
+
+.carte-raccourci:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ombre-carte-survol);
+}
+
+.carte-raccourci i {
+  font-size: 1.5rem;
+  color: var(--couleur-primaire);
+}
+
+.carte-raccourci span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--couleur-texte-principal);
+}
+
+/* Grille du tableau de bord */
+.grille-tableau-de-bord {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--espacement-xl);
+}
+
+.colonne-principale {
+  min-width: 0;
+}
+
+.colonne-laterale {
+  min-width: 0;
+}
+
+/* En-tete de section */
+.en-tete-section {
+  margin-bottom: var(--espacement-lg);
+}
+
+.en-tete-section h2 {
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+
+.en-tete-section h2 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+.lien-voir-plus {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--couleur-primaire);
+  white-space: nowrap;
+}
+
+/* Carte professionnel recommande */
+.liste-recommandations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-md);
+}
+
+.carte-professionnel-recommande {
+  padding: var(--espacement-lg);
+}
+
+.professionnel-en-tete {
+  display: flex;
+  gap: var(--espacement-md);
+  align-items: flex-start;
+  margin-bottom: var(--espacement-md);
+}
+
+.photo-professionnel {
+  width: 55px;
+  height: 55px;
+  border-radius: var(--rayon-bordure-rond);
+  object-fit: cover;
+  border: 2px solid var(--couleur-bordure-legere);
+}
+
+.professionnel-infos h4 {
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.professionnel-specialite,
+.professionnel-localisation {
+  font-size: 0.85rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: 0.2rem;
+}
+
+.professionnel-specialite i,
+.professionnel-localisation i {
+  width: 16px;
+  margin-right: 0.3rem;
+  color: var(--couleur-primaire);
+}
+
+.professionnel-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--espacement-sm);
+}
+
+.texte-note {
+  font-size: 0.85rem;
+  color: var(--couleur-texte-leger);
+  margin-left: var(--espacement-sm);
+}
+
+/* Articles en apercu */
+.carte-article-apercu {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.article-image {
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--rayon-bordure-md) var(--rayon-bordure-md) 0 0;
+  margin: calc(var(--espacement-xl) * -1) calc(var(--espacement-xl) * -1) 0;
+}
+
+.article-contenu-apercu {
+  padding-top: var(--espacement-md);
+}
+
+.article-contenu-apercu h4 {
+  font-size: 0.95rem;
+  margin: var(--espacement-sm) 0;
+  color: var(--couleur-texte-principal);
+  line-height: 1.4;
+}
+
+.article-auteur {
+  font-size: 0.8rem;
+  color: var(--couleur-texte-leger);
+}
+
+.article-auteur i {
+  margin-right: 0.3rem;
+}
+
+/* Colonne laterale */
+.carte-laterale {
+  padding: var(--espacement-lg);
+}
+
+.carte-laterale h3 {
+  font-size: 1.05rem;
+  margin-bottom: var(--espacement-md);
+}
+
+.carte-laterale h3 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+/* Rendez-vous */
+.liste-rendez-vous {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-md);
+}
+
+.rendez-vous-item {
+  padding: var(--espacement-md);
+  background-color: var(--couleur-fond-section);
+  border-radius: var(--rayon-bordure-sm);
+}
+
+.rdv-date {
+  font-size: 0.9rem;
+  margin-bottom: var(--espacement-xs);
+}
+
+.rdv-date i {
+  color: var(--couleur-primaire);
+  margin-right: 0.3rem;
+}
+
+.rdv-motif {
+  font-size: 0.85rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-xs);
+}
+
+.rdv-professionnel {
+  font-size: 0.85rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-xs);
+}
+
+.rdv-professionnel i {
+  margin-right: 0.3rem;
+  color: var(--couleur-primaire);
+}
+
+.texte-vide {
+  text-align: center;
+  color: var(--couleur-texte-leger);
+  padding: var(--espacement-lg);
+  font-size: 0.9rem;
+}
+
+.texte-vide i {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: var(--espacement-sm);
+}
+
+/* Programme dietetique */
+.programme-objectif {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--couleur-primaire-foncee);
+  margin-bottom: var(--espacement-md);
+}
+
+.liste-recommandations-diet {
+  list-style: none;
+  padding: 0;
+}
+
+.liste-recommandations-diet li {
+  padding: var(--espacement-sm) 0;
+  font-size: 0.88rem;
+  color: var(--couleur-texte-secondaire);
+  border-bottom: 1px solid var(--couleur-bordure-legere);
+}
+
+.liste-recommandations-diet li:last-child {
+  border-bottom: none;
+}
+
+.liste-recommandations-diet li i {
+  color: var(--couleur-succes);
+  margin-right: var(--espacement-sm);
+}
+
+/* Liens de suivi rapide */
+.liens-suivi-rapide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-sm);
+}
+
+.lien-suivi-rapide {
+  display: flex;
+  align-items: center;
+  gap: var(--espacement-sm);
+  padding: var(--espacement-sm) var(--espacement-md);
+  border-radius: var(--rayon-bordure-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--couleur-texte-secondaire);
+  text-decoration: none;
+  transition: var(--transition-rapide);
+}
+
+.lien-suivi-rapide:hover {
+  background-color: var(--couleur-fond-survol);
+  color: var(--couleur-primaire);
+}
+
+.lien-suivi-rapide i {
+  width: 20px;
+  text-align: center;
+  color: var(--couleur-primaire);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grille-tableau-de-bord {
+    grid-template-columns: 1fr;
+  }
+
+  .bienvenue-contenu {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .bienvenue-badges {
+    justify-content: center;
+  }
+
+  .grille-raccourcis {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grille-raccourcis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

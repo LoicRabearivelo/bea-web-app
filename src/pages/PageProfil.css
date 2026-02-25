@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Coordinateur de Vie - Styles de la page profil
+   ========================================================================== */
+
+.page-profil {
+  padding: var(--espacement-xl) 0;
+  min-height: calc(100vh - 65px);
+}
+
+.page-profil > .conteneur > h1 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+/* Alerte succes */
+.alerte {
+  display: flex;
+  align-items: center;
+  gap: var(--espacement-md);
+  padding: var(--espacement-md) var(--espacement-lg);
+  border-radius: var(--rayon-bordure-md);
+  margin-bottom: var(--espacement-lg);
+  font-size: 0.92rem;
+}
+
+.alerte-succes {
+  background-color: rgba(92, 184, 92, 0.1);
+  border: 1px solid rgba(92, 184, 92, 0.3);
+  color: var(--couleur-succes);
+}
+
+.alerte-succes i {
+  font-size: 1.1rem;
+}
+
+/* Grille profil */
+.grille-profil {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--espacement-xl);
+  align-items: flex-start;
+}
+
+/* Carte identite */
+.carte-identite {
+  text-align: center;
+  position: sticky;
+  top: 85px;
+}
+
+.avatar-profil {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--couleur-primaire), var(--couleur-primaire-foncee));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--espacement-md);
+}
+
+.avatar-profil i {
+  font-size: 2.2rem;
+  color: white;
+}
+
+.carte-identite h2 {
+  font-size: 1.2rem;
+  margin-bottom: var(--espacement-sm);
+}
+
+.carte-identite .badge {
+  margin-bottom: var(--espacement-md);
+  display: inline-block;
+}
+
+.zone-profil {
+  font-size: 0.88rem;
+  color: var(--couleur-texte-secondaire);
+  margin-bottom: var(--espacement-lg);
+}
+
+.zone-profil i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-xs);
+}
+
+.actions-profil-carte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-sm);
+}
+
+.actions-profil-carte .bouton {
+  width: 100%;
+  justify-content: center;
+}
+
+.bouton-danger {
+  background-color: transparent;
+  color: var(--couleur-erreur);
+  border: 1px solid var(--couleur-erreur);
+}
+
+.bouton-danger:hover {
+  background-color: var(--couleur-erreur);
+  color: white;
+}
+
+/* Formulaire profil */
+.carte-formulaire-profil h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--espacement-lg);
+}
+
+.carte-formulaire-profil h3 i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+.grille-champs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacement-md);
+}
+
+.sous-section-profil {
+  font-size: 1rem;
+  margin-top: var(--espacement-xl);
+  margin-bottom: var(--espacement-md);
+  padding-top: var(--espacement-lg);
+  border-top: 1px solid var(--couleur-bordure-legere);
+}
+
+.sous-section-profil i {
+  color: var(--couleur-primaire);
+  margin-right: var(--espacement-sm);
+}
+
+.actions-formulaire-profil {
+  display: flex;
+  gap: var(--espacement-md);
+  margin-top: var(--espacement-lg);
+  padding-top: var(--espacement-lg);
+  border-top: 1px solid var(--couleur-bordure-legere);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: var(--couleur-fond-section);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grille-profil {
+    grid-template-columns: 1fr;
+  }
+
+  .carte-identite {
+    position: static;
+  }
+
+  .grille-champs {
+    grid-template-columns: 1fr;
+  }
+
+  .actions-formulaire-profil {
+    flex-direction: column;
+  }
+}

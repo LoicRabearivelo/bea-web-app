@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Coordinateur de Vie - Styles de la barre de navigation
+   ========================================================================== */
+
+.barre-navigation {
+  background-color: var(--couleur-fond-carte);
+  box-shadow: 0 2px 8px rgba(125, 100, 80, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--couleur-bordure-legere);
+}
+
+.barre-navigation-conteneur {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacement-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+}
+
+.barre-navigation-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacement-sm);
+  text-decoration: none;
+  color: var(--couleur-primaire);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.barre-navigation-logo i {
+  font-size: 1.4rem;
+  color: var(--couleur-accent);
+}
+
+.barre-navigation-titre {
+  font-family: var(--police-titre);
+  font-weight: 700;
+  color: var(--couleur-texte-principal);
+}
+
+.bouton-menu-mobile {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--couleur-texte-principal);
+  cursor: pointer;
+  padding: var(--espacement-sm);
+}
+
+.barre-navigation-liens {
+  display: flex;
+  align-items: center;
+  gap: var(--espacement-xs);
+}
+
+.lien-navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--rayon-bordure-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--couleur-texte-secondaire);
+  text-decoration: none;
+  transition: var(--transition-rapide);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--police-principale);
+  white-space: nowrap;
+}
+
+.lien-navigation:hover {
+  color: var(--couleur-primaire);
+  background-color: var(--couleur-fond-survol);
+}
+
+.lien-navigation.actif {
+  color: var(--couleur-primaire);
+  background-color: rgba(123, 158, 135, 0.1);
+}
+
+.lien-navigation i {
+  font-size: 0.95rem;
+  width: 18px;
+  text-align: center;
+}
+
+.bouton-inscription {
+  background-color: var(--couleur-primaire);
+  color: var(--couleur-texte-inverse) !important;
+  border-radius: var(--rayon-bordure-md);
+  padding: 0.5rem 1rem;
+}
+
+.bouton-inscription:hover {
+  background-color: var(--couleur-primaire-foncee);
+  color: var(--couleur-texte-inverse) !important;
+}
+
+.bouton-deconnexion {
+  color: var(--couleur-erreur) !important;
+}
+
+.bouton-deconnexion:hover {
+  background-color: #f8d7da;
+}
+
+.separateur-navigation {
+  width: 1px;
+  height: 24px;
+  background-color: var(--couleur-bordure);
+  margin: 0 var(--espacement-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive - Menu mobile
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .bouton-menu-mobile {
+    display: block;
+  }
+
+  .barre-navigation-liens {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background-color: var(--couleur-fond-carte);
+    flex-direction: column;
+    padding: var(--espacement-md);
+    box-shadow: 0 4px 12px rgba(125, 100, 80, 0.1);
+    border-bottom: 2px solid var(--couleur-bordure-legere);
+    gap: var(--espacement-xs);
+    align-items: stretch;
+  }
+
+  .barre-navigation-liens.ouvert {
+    display: flex;
+  }
+
+  .lien-navigation {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .separateur-navigation {
+    width: 100%;
+    height: 1px;
+    margin: var(--espacement-sm) 0;
+  }
+}
