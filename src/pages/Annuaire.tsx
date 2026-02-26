@@ -51,8 +51,8 @@ export default function Annuaire() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold text-dark mb-6">Annuaire des professionnels</h1>
+    <div className="max-w-6xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">Annuaire des professionnels</h1>
 
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -97,9 +97,9 @@ export default function Annuaire() {
         {filteredPros.map(pro => (
           <Card key={pro.id} className="p-0 overflow-hidden">
             <div className="p-6">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary text-lg">
+              <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary text-base sm:text-lg flex-shrink-0">
                     {pro.prenom.charAt(0)}{pro.nom.charAt(0)}
                   </div>
                   <div>
@@ -111,7 +111,7 @@ export default function Annuaire() {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 self-end sm:self-start flex-shrink-0">
                   <Badge variant="blue">
                     <MapPin size={12} className="mr-1" />{pro.zone}
                   </Badge>

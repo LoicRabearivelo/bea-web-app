@@ -34,17 +34,17 @@ export default function ProDashboard() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-dark">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-xl sm:text-2xl font-bold text-dark">
           {utilisateur.prenom} {utilisateur.nom}
         </h1>
         <Badge variant="olive">{utilisateur.specialite}</Badge>
       </div>
 
       {/* KPIs */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
         {kpis.map((kpi, i) => (
           <Card key={i} className="text-center">
             <div className="flex justify-center mb-2">{kpi.icon}</div>
@@ -78,13 +78,13 @@ export default function ProDashboard() {
             <Card><p className="text-dark/60 text-center py-4">Aucun rendez-vous prévu</p></Card>
           ) : (
             rdvs.map((rdv: any) => (
-              <Card key={rdv.id} className="flex items-center justify-between">
-                <div>
-                  <p className="font-semibold text-dark">{rdv.patientNom}</p>
+              <Card key={rdv.id} className="flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
+                <div className="min-w-0">
+                  <p className="font-semibold text-dark truncate">{rdv.patientNom}</p>
                   <p className="text-sm text-dark/60">{rdv.motif}</p>
                   <p className="text-xs text-dark/40 mt-1">{rdv.date} à {rdv.heure}</p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-shrink-0">
                   <Badge variant={rdv.statut === 'confirme' ? 'olive' : 'gold'}>
                     {rdv.statut === 'confirme' ? 'Confirmé' : 'En attente'}
                   </Badge>
@@ -113,13 +113,13 @@ export default function ProDashboard() {
           ) : (
             rdvEnAttente.map((rdv: any) => (
               <Card key={rdv.id}>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-dark">{rdv.patientNom}</p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
+                  <div className="min-w-0">
+                    <p className="font-semibold text-dark truncate">{rdv.patientNom}</p>
                     <p className="text-sm text-dark/60">{rdv.motif}</p>
                     <p className="text-xs text-dark/40 mt-1">{rdv.date} à {rdv.heure}</p>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-shrink-0">
                     <Button variant="primary" size="sm">Confirmer</Button>
                     <Button variant="secondary" size="sm">Refuser</Button>
                   </div>

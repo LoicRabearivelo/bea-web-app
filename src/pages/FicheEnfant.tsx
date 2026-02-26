@@ -111,8 +111,8 @@ export default function FicheEnfant() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-6">
+    <div className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
         <div>
           <h1 className="text-2xl font-bold text-dark flex items-center gap-2">
             <Baby className="text-primary" /> Fiche de {enfant.prenom || 'mon enfant'}
@@ -131,7 +131,7 @@ export default function FicheEnfant() {
       {/* Info de base */}
       <Card className="mb-4">
         <h2 className="font-bold text-dark mb-3">Informations de naissance</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <label className="text-xs text-dark/50">Prénom</label>
             {editing ? (

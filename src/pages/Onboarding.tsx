@@ -77,7 +77,7 @@ export default function Onboarding() {
   const progress = ((etape + 1) / ETAPES.length) * 100;
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
+    <div className="min-h-[80vh] flex items-center justify-center px-3 sm:px-4 py-8 sm:py-12">
       <div className="w-full max-w-xl">
         {/* Progress bar */}
         <div className="mb-8">
@@ -93,7 +93,7 @@ export default function Onboarding() {
           </div>
         </div>
 
-        <div className="bg-white/80 border border-light-blue rounded-xl shadow-sm p-8">
+        <div className="bg-white/80 border border-light-blue rounded-xl shadow-sm p-4 sm:p-8">
           {/* ÉTAPE 1 — Situation */}
           {etape === 0 && (
             <div>
@@ -127,12 +127,12 @@ export default function Onboarding() {
               
               <div className="mb-4">
                 <label className="block text-sm font-medium text-dark mb-2">Zone géographique</label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {data.zonesGeographiques.map(zone => (
                     <button
                       key={zone.id}
                       onClick={() => updateProfil('zone', zone.label)}
-                      className={`py-3 px-4 rounded-xl border-2 text-sm font-medium transition-all ${
+                      className={`py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl border-2 text-xs sm:text-sm font-medium transition-all ${
                         profil.zone === zone.label
                           ? 'border-primary bg-primary/5 text-primary'
                           : 'border-light-blue text-dark/70 hover:border-salmon'

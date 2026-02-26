@@ -15,7 +15,7 @@ export default function Articles() {
 
   if (selectedArticle) {
     return (
-      <div className="max-w-3xl mx-auto px-4 py-8">
+      <div className="max-w-3xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
         <button
           onClick={() => setSelectedArticle(null)}
           className="flex items-center gap-2 text-primary text-sm mb-6 hover:underline"
@@ -49,8 +49,8 @@ export default function Articles() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold text-dark mb-2">Articles & Ressources</h1>
+    <div className="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-2">Articles & Ressources</h1>
       <p className="text-dark/60 text-sm mb-6">Informations validées par des professionnels de la périnatalité</p>
 
       {/* Category filter */}

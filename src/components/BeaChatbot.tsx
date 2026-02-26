@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { X, Send, RotateCcw, Flower2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useChat } from '../context/ChatContext';
+import { useResponsive } from '../hooks/useResponsive';
 import Button from '../components/ui/Button';
 import data from '../data/data.json';
 
@@ -162,6 +163,7 @@ export default function BeaChatbot() {
   const { messages, beaProfile, isOpen, isLoading, setIsOpen, setBeaProfile, sendMessage, resetChat } = useChat();
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { isMobile } = useResponsive();
 
   const isPatient = utilisateur?.type === 'patient';
 
@@ -195,7 +197,11 @@ export default function BeaChatbot() {
 
       {/* Chat window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-[360px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-6rem)] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border border-light-blue overflow-hidden">
+        <div className={`fixed bg-white shadow-2xl flex flex-col z-50 border border-light-blue overflow-hidden ${
+          isMobile
+            ? 'inset-0 rounded-none'
+            : 'bottom-6 right-6 w-[360px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-6rem)] rounded-2xl'
+        }`}>
           {/* Header */}
           <div className="bg-primary text-white px-4 py-3 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2">

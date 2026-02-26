@@ -41,7 +41,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
+    <div className="min-h-[80vh] flex items-center justify-center px-3 sm:px-4 py-8 sm:py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <img src="/logo.png" alt="Béa" className="h-16 mx-auto mb-4" />
@@ -49,7 +49,7 @@ export default function Register() {
           <p className="text-dark/60 mt-2">Rejoignez la communauté Béa</p>
         </div>
 
-        <div className="bg-white/80 border border-light-blue rounded-xl shadow-sm p-8">
+        <div className="bg-white/80 border border-light-blue rounded-xl shadow-sm p-5 sm:p-8">
           {/* Type selector */}
           <div className="flex gap-2 mb-6">
             {(['patient', 'professionnel'] as const).map(type => (

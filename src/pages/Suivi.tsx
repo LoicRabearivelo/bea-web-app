@@ -51,8 +51,8 @@ export default function Suivi() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold text-dark mb-6">Mon suivi</h1>
+    <div className="max-w-6xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">Mon suivi</h1>
 
       {/* Tabs */}
       <div className="flex gap-1 mb-6 overflow-x-auto pb-2 bg-light-blue/50 p-1 rounded-xl">
@@ -90,7 +90,7 @@ export default function Suivi() {
                     {profil.dpa && <p className="text-sm text-dark/60">DPA : {profil.dpa}</p>}
                   </div>
                 </div>
-                <div className="grid grid-cols-7 sm:grid-cols-14 gap-1">
+                <div className="grid grid-cols-7 gap-1">
                   {Array.from({ length: 41 }, (_, i) => {
                     const week = i + 1;
                     const isCurrent = week === profil.semainesAmenorrhee;
@@ -223,9 +223,9 @@ export default function Suivi() {
                 </div>
               </div>
               {enfant.suivi.croissance.map((entry: any, i: number) => (
-                <div key={i} className="flex items-center justify-between py-3 border-b border-light-blue last:border-0">
+                <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between py-3 border-b border-light-blue last:border-0 gap-1">
                   <span className="text-sm text-dark/60">{entry.date}</span>
-                  <div className="flex gap-4 text-sm">
+                  <div className="flex gap-3 sm:gap-4 text-sm flex-wrap">
                     <span className="font-medium text-dark">{entry.poids}g</span>
                     <span className="text-dark/60">{entry.taille}cm</span>
                     <span className="text-dark/60">PC {entry.perimCre}cm</span>

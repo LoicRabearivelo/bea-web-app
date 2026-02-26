@@ -13,14 +13,14 @@ export default function Landing() {
   return (
     <div className="bg-bg">
       {/* HERO */}
-      <section className="py-20 px-4">
+      <section className="py-10 sm:py-16 md:py-20 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <img src="/logo.png" alt="Béa" className="h-20 mx-auto mb-8" />
-          <h1 className="text-4xl md:text-5xl font-bold text-dark leading-tight mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark leading-tight mb-4 sm:mb-6">
             Votre parcours périnatal à La Réunion,<br />
             <span className="text-primary">enfin centralisé</span>
           </h1>
-          <p className="text-lg text-dark/70 max-w-2xl mx-auto mb-10">
+          <p className="text-base sm:text-lg text-dark/70 max-w-2xl mx-auto mb-6 sm:mb-10 px-2">
             De la préparation à la naissance jusqu'aux 12 premiers mois de bébé. 
             Béa connecte les futures familles réunionnaises à l'écosystème périnatal local.
           </p>
@@ -36,17 +36,17 @@ export default function Landing() {
       </section>
 
       {/* LE PROBLÈME */}
-      <section className="py-16 px-4 bg-light-blue">
+      <section className="py-10 sm:py-16 px-4 bg-light-blue">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-dark text-center mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark text-center mb-4">
             « Je suis perdue. Je vais où ? »
           </h2>
           <p className="text-center text-dark/60 mb-12 max-w-2xl mx-auto">
             Cette question, des centaines de futures mamans réunionnaises se la posent chaque jour.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             <Card>
-              <h3 className="text-xl font-bold text-primary mb-4">👩‍👧 Pour les parents</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-primary mb-3 sm:mb-4">👩‍👧 Pour les parents</h3>
               <ul className="space-y-3 text-dark/70">
                 <li>• Pas d'information centralisée sur les soins périnataux</li>
                 <li>• Difficulté à trouver le bon professionnel</li>
@@ -56,7 +56,7 @@ export default function Landing() {
               </ul>
             </Card>
             <Card>
-              <h3 className="text-xl font-bold text-primary mb-4">👨‍⚕️ Pour les professionnels</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-primary mb-3 sm:mb-4">👨‍⚕️ Pour les professionnels</h3>
               <ul className="space-y-3 text-dark/70">
                 <li>• Visibilité limitée auprès des familles</li>
                 <li>• Pas d'outil de coordination interprofessionnelle</li>
@@ -70,15 +70,15 @@ export default function Landing() {
       </section>
 
       {/* LA SOLUTION */}
-      <section className="py-16 px-4">
+      <section className="py-10 sm:py-16 px-4">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-dark mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
             Le Coordinateur de Vie
           </h2>
-          <p className="text-dark/60 mb-12 max-w-2xl mx-auto">
+          <p className="text-dark/60 mb-8 sm:mb-12 max-w-2xl mx-auto">
             Un tiers de confiance numérique qui vous accompagne à chaque étape
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-olive/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-3xl">🌱</span>
@@ -105,10 +105,10 @@ export default function Landing() {
       </section>
 
       {/* FONCTIONNALITÉS */}
-      <section className="py-16 px-4 bg-light-blue/50">
+      <section className="py-10 sm:py-16 px-4 bg-light-blue/50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-dark text-center mb-12">Tout ce dont vous avez besoin</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark text-center mb-8 sm:mb-12">Tout ce dont vous avez besoin</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               { icon: <Calendar className="text-primary" size={28} />, title: 'Calendrier de suivi', desc: 'Suivez votre grossesse semaine par semaine avec des contenus personnalisés.' },
               { icon: <Search className="text-olive" size={28} />, title: 'Annuaire des pros', desc: 'Trouvez sage-femmes, gynécologues, doulas près de chez vous.' },
@@ -128,16 +128,16 @@ export default function Landing() {
       </section>
 
       {/* OFFRES B2C */}
-      <section id="offres" className="py-16 px-4">
+      <section id="offres" className="py-10 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-dark text-center mb-4">Nos offres familles</h2>
           <p className="text-center text-dark/60 mb-12">Choisissez le pack adapté à votre situation</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {offresBtoC.map((offre: any) => (
               <div
                 key={offre.id}
-                className={`relative rounded-2xl border-2 p-6 transition-all duration-200 hover:shadow-lg ${
-                  (offre as any).populaire ? 'border-primary bg-primary/5 scale-105' : 'border-light-blue bg-white/80'
+                className={`relative rounded-2xl border-2 p-4 sm:p-6 transition-all duration-200 hover:shadow-lg ${
+                  (offre as any).populaire ? 'border-primary bg-primary/5 sm:scale-105' : 'border-light-blue bg-white/80'
                 }`}
               >
                 {(offre as any).populaire && (
@@ -179,13 +179,13 @@ export default function Landing() {
       </section>
 
       {/* OFFRES B2B */}
-      <section className="py-16 px-4 bg-dark">
+      <section className="py-10 sm:py-16 px-4 bg-dark">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-4">Offres Professionnels</h2>
           <p className="text-white/60 text-center mb-12">Rejoignez le réseau périnatal de La Réunion</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {offresBtoB.map((offre: any) => (
-              <div key={offre.id} className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
+              <div key={offre.id} className="bg-white/10 backdrop-blur rounded-xl p-4 sm:p-6 border border-white/20">
                 <div className="text-center mb-4">
                   <span className="text-3xl">{offre.icone}</span>
                   <h3 className="font-bold text-white mt-2">{offre.nom}</h3>
@@ -207,9 +207,9 @@ export default function Landing() {
       </section>
 
       {/* LA RÉUNION */}
-      <section className="py-16 px-4">
+      <section className="py-10 sm:py-16 px-4">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-dark mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
             <MapPin className="inline text-primary mr-2" size={28} />
             La Réunion au cœur
           </h2>
@@ -226,10 +226,10 @@ export default function Landing() {
       </section>
 
       {/* TÉMOIGNAGES */}
-      <section className="py-16 px-4 bg-light-blue/50">
+      <section className="py-10 sm:py-16 px-4 bg-light-blue/50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-dark text-center mb-12">Ce que disent nos utilisatrices</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark text-center mb-8 sm:mb-12">Ce que disent nos utilisatrices</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {[
               { nom: 'Aurélie M.', ville: 'Saint-Denis', texte: 'Béa m\'a permis de trouver une sage-femme formidable à 5 minutes de chez moi. Le suivi personnalisé est top !', note: 5 },
               { nom: 'Nadia K.', ville: 'Saint-Pierre', texte: 'En post-partum, j\'étais perdue. Grâce au chatbot Béa, j\'ai pu avoir des réponses rapides et trouver une psy spécialisée.', note: 5 },
@@ -258,9 +258,9 @@ export default function Landing() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-20 px-4 text-center">
+      <section className="py-12 sm:py-20 px-4 text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-dark mb-4">Prête à commencer ?</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-4">Prête à commencer ?</h2>
           <p className="text-dark/60 mb-8">
             Rejoignez des centaines de familles réunionnaises qui font confiance à Béa.
           </p>

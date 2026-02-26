@@ -62,8 +62,8 @@ export default function Communaute() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold text-dark mb-6">Communauté</h1>
+    <div className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">Communauté</h1>
 
       {/* Tabs */}
       <div className="flex gap-1 mb-6 bg-light-blue/50 p-1 rounded-xl">

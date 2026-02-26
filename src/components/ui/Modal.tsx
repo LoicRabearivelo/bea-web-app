@@ -28,9 +28,9 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="fixed inset-0 bg-dark/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-bg rounded-xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 z-10">
+      <div className="relative bg-bg rounded-xl shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto p-4 sm:p-6 z-10 mx-2 sm:mx-0">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold text-dark">{title}</h2>
+          <h2 className="text-lg sm:text-xl font-bold text-dark">{title}</h2>
           <button onClick={onClose} className="p-1 hover:bg-light-blue rounded-lg transition-colors">
             <X size={20} />
           </button>

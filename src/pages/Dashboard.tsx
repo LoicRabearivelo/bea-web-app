@@ -56,10 +56,10 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-dark">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-xl sm:text-2xl font-bold text-dark">
           Bonjour {utilisateur.prenom} 👋
         </h1>
         {profil && (
@@ -86,16 +86,16 @@ export default function Dashboard() {
         )}
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Main content */}
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-2 space-y-4 sm:space-y-6 lg:space-y-8">
           {/* Raccourcis */}
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-3">
             {raccourcis.map((r, i) => (
               <Link key={i} to={r.to}>
-                <Card className="text-center p-4 hover:border-primary">
-                  <div className="flex justify-center mb-2">{r.icon}</div>
-                  <p className="text-xs font-medium text-dark">{r.label}</p>
+                <Card className="text-center !p-3 sm:!p-4 hover:border-primary">
+                  <div className="flex justify-center mb-1 sm:mb-2">{r.icon}</div>
+                  <p className="text-[10px] sm:text-xs font-medium text-dark leading-tight">{r.label}</p>
                 </Card>
               </Link>
             ))}
@@ -107,14 +107,14 @@ export default function Dashboard() {
               <h2 className="font-bold text-dark mb-4 flex items-center gap-2">
                 <Calendar size={20} className="text-primary" /> Votre semaine
               </h2>
-              <div className="flex items-center gap-4 overflow-x-auto pb-2">
+              <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto pb-2 -mx-1 px-1">
                 {Array.from({ length: 7 }, (_, i) => {
                   const week = Math.max(1, sa - 3 + i);
                   if (week > 41) return null;
                   return (
                     <div
                       key={week}
-                      className={`flex-shrink-0 w-14 h-14 rounded-xl flex flex-col items-center justify-center text-sm font-medium transition-all ${
+                      className={`flex-shrink-0 w-11 h-11 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl flex flex-col items-center justify-center text-xs sm:text-sm font-medium transition-all ${
                         week === sa
                           ? 'bg-primary text-white shadow-lg scale-110'
                           : week < sa
@@ -133,10 +133,10 @@ export default function Dashboard() {
 
           {/* Professionnels recommandés */}
           <div>
-            <h2 className="font-bold text-dark mb-4 flex items-center gap-2">
-              <Search size={20} className="text-olive" /> Professionnels recommandés
+            <h2 className="font-bold text-dark mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+              <Search size={18} className="text-olive flex-shrink-0" /> Professionnels recommandés
             </h2>
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {scoredPros.map(pro => (
                 <Card key={pro.id}>
                   <div className="flex items-center gap-3 mb-3">
@@ -163,15 +163,15 @@ export default function Dashboard() {
 
           {/* Articles */}
           <div>
-            <h2 className="font-bold text-dark mb-4 flex items-center gap-2">
-              <BookOpen size={20} className="text-primary" /> Articles récents
+            <h2 className="font-bold text-dark mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+              <BookOpen size={18} className="text-primary flex-shrink-0" /> Articles récents
             </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {recentArticles.map(article => (
                 <Card key={article.id}>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl">{article.icone}</span>
-                    <div>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <span className="text-xl sm:text-2xl flex-shrink-0">{article.icone}</span>
+                    <div className="min-w-0">
                       <Badge variant="olive" className="text-[10px] mb-1">{article.categorie}</Badge>
                       <h3 className="font-semibold text-dark text-sm leading-snug">{article.titre}</h3>
                       <p className="text-xs text-dark/50 mt-1">
@@ -186,7 +186,7 @@ export default function Dashboard() {
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {/* Prochain RDV */}
           <Card className="border-primary/30">
             <h3 className="font-bold text-dark mb-3 flex items-center gap-2">

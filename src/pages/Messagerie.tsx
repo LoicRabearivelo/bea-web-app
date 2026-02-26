@@ -33,8 +33,8 @@ export default function Messagerie() {
   if (!utilisateur) return null;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold text-dark mb-6">Messagerie</h1>
+    <div className="max-w-6xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+      <h1 className="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">Messagerie</h1>
 
       <div className="grid lg:grid-cols-3 gap-6 min-h-[60vh]">
         {/* Conversations list */}

@@ -32,10 +32,10 @@ export default function Profil() {
   const currentOffre = offres.find((o: any) => o.id === utilisateur.abonnement) || offres[0];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-dark">Mon profil</h1>
-        <div className="flex gap-2">
+    <div className="max-w-3xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+        <h1 className="text-xl sm:text-2xl font-bold text-dark">Mon profil</h1>
+        <div className="flex gap-2 flex-shrink-0">
           {editing ? (
             <Button size="sm" onClick={handleSave}><Save size={14} /> Enregistrer</Button>
           ) : (
