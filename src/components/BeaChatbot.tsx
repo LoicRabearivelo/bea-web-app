@@ -1,9 +1,91 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { X, Send, RotateCcw, Flower2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useChat } from '../context/ChatContext';
 import Button from '../components/ui/Button';
 import data from '../data/data.json';
+
+/** Lightweight markdown renderer for chat messages */
+function renderMarkdown(text: string): React.ReactNode[] {
+  const lines = text.split('\n');
+  const elements: React.ReactNode[] = [];
+
+  lines.forEach((line, lineIdx) => {
+    if (lineIdx > 0) elements.push(<br key={`br-${lineIdx}`} />);
+
+    // Numbered list: "1. text"
+    const olMatch = line.match(/^(\d+)\.\s+(.*)$/);
+    if (olMatch) {
+      elements.push(
+        <span key={`ol-${lineIdx}`} className="flex gap-1.5 mt-1">
+          <span className="text-primary font-bold shrink-0">{olMatch[1]}.</span>
+          <span>{inlineMarkdown(olMatch[2], lineIdx)}</span>
+        </span>
+      );
+      return;
+    }
+
+    // Bullet list: "- text"
+    const ulMatch = line.match(/^[-•]\s+(.*)$/);
+    if (ulMatch) {
+      elements.push(
+        <span key={`ul-${lineIdx}`} className="flex gap-1.5 mt-0.5 items-start">
+          <span className="shrink-0 mt-0.5">•</span>
+          <span>{inlineMarkdown(ulMatch[1], lineIdx)}</span>
+        </span>
+      );
+      return;
+    }
+
+    elements.push(<span key={`line-${lineIdx}`}>{inlineMarkdown(line, lineIdx)}</span>);
+  });
+
+  return elements;
+}
+
+/** Parse inline markdown: **bold**, [text](url) */
+function inlineMarkdown(text: string, lineIdx: number): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  // Regex: **bold** or [link text](url)
+  const regex = /(\*\*(.+?)\*\*)|(\[([^\]]+)\]\((https?:\/\/[^\s)]+)\))/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let partIdx = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    // Text before match
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+
+    if (match[1]) {
+      // **bold**
+      parts.push(<strong key={`b-${lineIdx}-${partIdx}`} className="font-semibold">{match[2]}</strong>);
+    } else if (match[3]) {
+      // [text](url)
+      parts.push(
+        <a
+          key={`a-${lineIdx}-${partIdx}`}
+          href={match[5]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-primary break-all"
+        >
+          {match[4]}
+        </a>
+      );
+    }
+
+    lastIndex = regex.lastIndex;
+    partIdx++;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
 
 function QualificationForm({ onSubmit }: { onSubmit: (profile: { age: number; stade: string; commune: string }) => void }) {
   const { utilisateur } = useAuth();
@@ -169,7 +251,9 @@ export default function BeaChatbot() {
                           : 'bg-light-blue/50 text-dark rounded-bl-md'
                       }`}
                     >
-                      <p className="whitespace-pre-wrap">{msg.content}</p>
+                      <div className="whitespace-pre-wrap break-words">
+                        {msg.role === 'assistant' ? renderMarkdown(msg.content) : msg.content}
+                      </div>
                       <p className={`text-[9px] mt-1 ${msg.role === 'user' ? 'text-white/50' : 'text-dark/30'}`}>
                         {new Date(msg.timestamp).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
                       </p>

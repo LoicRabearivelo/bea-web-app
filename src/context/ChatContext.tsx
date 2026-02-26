@@ -82,7 +82,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
 
       const assistantMsg: ChatMessage = {
         role: 'assistant',
-        content: data.response || data.message || data.reply || 'Merci pour votre message.',
+        content: data.reponse || data.response || data.message || 'Merci pour votre message.',
         timestamp: new Date().toISOString(),
       };
 
