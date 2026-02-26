@@ -1,0 +1,625 @@
+{
+  "utilisateurs": [
+    {
+      "id": "pro-001",
+      "type": "professionnel",
+      "email": "sage.femme@reunion.re",
+      "motDePasse": "demo1234",
+      "nom": "Martin",
+      "prenom": "Sophie",
+      "specialite": "Sage-femme",
+      "zone": "Nord",
+      "ville": "Saint-Denis",
+      "telephone": "0262 XX XX XX",
+      "rpps": "10012345678",
+      "description": "Sage-femme libérale spécialisée en préparation à la naissance et suivi post-partum. 12 ans d'expérience à La Réunion.",
+      "disponibilites": ["Lundi 9h-12h", "Mercredi 14h-18h", "Vendredi 9h-17h"],
+      "note": 4.8,
+      "avis": [
+        {"auteur": "Marie D.", "note": 5, "date": "2024-11-15", "commentaire": "Sophie est exceptionnelle, très à l'écoute et professionnelle."},
+        {"auteur": "Lucie R.", "note": 4, "date": "2024-10-20", "commentaire": "Très bonne sage-femme, je recommande vivement."}
+      ],
+      "rendezvous": [
+        {"id": "rdv-001", "patientId": "pat-001", "patientNom": "Camille Dupont", "date": "2025-01-15", "heure": "10h00", "motif": "Suivi de grossesse - T2", "statut": "confirme"},
+        {"id": "rdv-002", "patientId": "pat-002", "patientNom": "Sarah Lebon", "date": "2025-01-16", "heure": "14h30", "motif": "Consultation post-partum", "statut": "en_attente"}
+      ],
+      "messages": [
+        {"id": "msg-pro-001", "avecId": "pat-001", "avecNom": "Camille Dupont", "messages": [
+          {"expediteurId": "pat-001", "contenu": "Bonjour, j'ai une question sur ma DPA.", "horodatage": "2025-01-10T09:30:00"},
+          {"expediteurId": "pro-001", "contenu": "Bonjour Camille ! Je suis là, posez votre question.", "horodatage": "2025-01-10T10:00:00"}
+        ]}
+      ]
+    },
+    {
+      "id": "pat-001",
+      "type": "patient",
+      "abonnement": "gratuit",
+      "email": "patient.free@reunion.re",
+      "motDePasse": "demo1234",
+      "nom": "Dupont",
+      "prenom": "Camille",
+      "telephone": "0692 XX XX XX",
+      "zone": "Nord",
+      "ville": "Saint-Denis",
+      "onboardingComplete": true,
+      "profil": {
+        "stade": "T2",
+        "semainesAmenorrhee": 22,
+        "dpa": "2025-06-15",
+        "rangGrossesse": 1,
+        "typeAccouchement": "voie_basse",
+        "antecedents": [],
+        "besoins": ["suivi_medical", "nutrition", "preparation_naissance"],
+        "partenaire": {"nom": "Thomas Dupont", "email": "thomas.dupont@mail.re"}
+      },
+      "enfants": [],
+      "portefeuille": {
+        "notes": [
+          {"id": "note-001", "titre": "Questions pour la sage-femme", "contenu": "Demander à propos du bain de bébé", "date": "2025-01-10"}
+        ],
+        "documents": []
+      },
+      "messages": [
+        {"id": "msg-pat-001", "avecId": "pro-001", "avecNom": "Sophie Martin (Sage-femme)", "messages": [
+          {"expediteurId": "pat-001", "contenu": "Bonjour, j'ai une question sur ma DPA.", "horodatage": "2025-01-10T09:30:00"},
+          {"expediteurId": "pro-001", "contenu": "Bonjour Camille ! Je suis là, posez votre question.", "horodatage": "2025-01-10T10:00:00"}
+        ]}
+      ]
+    },
+    {
+      "id": "pat-002",
+      "type": "patient",
+      "abonnement": "pro",
+      "pack": "grossesse",
+      "email": "patient.pro@reunion.re",
+      "motDePasse": "demo1234",
+      "nom": "Lebon",
+      "prenom": "Sarah",
+      "telephone": "0692 YY YY YY",
+      "zone": "Sud",
+      "ville": "Saint-Pierre",
+      "onboardingComplete": true,
+      "profil": {
+        "stade": "post_natal",
+        "semainesAmenorrhee": null,
+        "dpa": "2024-10-01",
+        "rangGrossesse": 2,
+        "typeAccouchement": "cesarienne",
+        "antecedents": ["cesarienne_anterieure"],
+        "besoins": ["post_partum", "allaitement", "sante_mentale"],
+        "partenaire": null
+      },
+      "enfants": [
+        {
+          "id": "enfant-001",
+          "prenom": "Léa",
+          "dateNaissance": "2024-10-05",
+          "poidsNaissance": 3200,
+          "tailleNaissance": 49,
+          "perimCreNaissance": 34,
+          "alimentation": "allaitement_exclusif",
+          "suivi": {
+            "sommeil": [{"date": "2025-01-10", "dureeHeures": 4, "qualite": "moyen", "notes": "Réveils fréquents"}],
+            "repas": [{"date": "2025-01-10", "type": "allaitement", "quantite": null, "heure": "07h00"}],
+            "croissance": [{"date": "2025-01-10", "poids": 4100, "taille": 53, "perimCre": 37}],
+            "jalons": {"premier_sourire": true, "prehension": false, "babillage": false, "tenue_assise": false, "premiers_pas": false}
+          }
+        }
+      ],
+      "portefeuille": {"notes": [], "documents": []},
+      "messages": []
+    }
+  ],
+
+  "professionnels": [
+    {
+      "id": "pro-001",
+      "nom": "Martin",
+      "prenom": "Sophie",
+      "specialite": "Sage-femme",
+      "categorie": "pendant_grossesse",
+      "zone": "Nord",
+      "ville": "Saint-Denis",
+      "telephone": "0262 XX XX XX",
+      "email": "sage.femme@reunion.re",
+      "description": "Sage-femme libérale, spécialisée préparation naissance et post-partum.",
+      "specialisations": ["Préparation à la naissance", "Suivi post-partum", "Rééducation périnéale"],
+      "disponibilites": ["Lundi 9h-12h", "Mercredi 14h-18h", "Vendredi 9h-17h"],
+      "note": 4.8,
+      "nombreAvis": 24,
+      "avis": [
+        {"auteur": "Marie D.", "note": 5, "date": "2024-11-15", "commentaire": "Sophie est exceptionnelle, très à l'écoute."},
+        {"auteur": "Lucie R.", "note": 4, "date": "2024-10-20", "commentaire": "Très bonne sage-femme, je recommande."}
+      ],
+      "besoinsAssocies": ["suivi_medical", "preparation_naissance", "post_partum", "allaitement", "reeducation_perineale"]
+    },
+    {
+      "id": "pro-002",
+      "nom": "Techer",
+      "prenom": "Marie-Hélène",
+      "specialite": "Gynécologue-obstétricien",
+      "categorie": "pendant_grossesse",
+      "zone": "Sud",
+      "ville": "Saint-Pierre",
+      "telephone": "0262 YY YY YY",
+      "email": "gynecologue@clinique-reunion.re",
+      "description": "Gynécologue-obstétricien à la Clinique Sainte-Clotilde Sud.",
+      "specialisations": ["Grossesse à risque", "Suivi échographique", "Accouchement"],
+      "disponibilites": ["Mardi 9h-12h", "Jeudi 14h-18h"],
+      "note": 4.6,
+      "nombreAvis": 18,
+      "avis": [
+        {"auteur": "Amandine G.", "note": 5, "date": "2024-12-01", "commentaire": "Très rassurante et compétente."}
+      ],
+      "besoinsAssocies": ["suivi_medical", "fertilite"]
+    },
+    {
+      "id": "pro-003",
+      "nom": "Fontaine",
+      "prenom": "Jean-Paul",
+      "specialite": "Ostéopathe",
+      "categorie": "bebe",
+      "zone": "Est",
+      "ville": "Saint-Benoît",
+      "telephone": "0692 ZZ ZZ ZZ",
+      "email": "osteo.fontaine@gmail.com",
+      "description": "Ostéopathe spécialisé nourrissons et femmes enceintes.",
+      "specialisations": ["Ostéopathie pédiatrique", "Suivi nourrisson", "Femme enceinte"],
+      "disponibilites": ["Lundi-Vendredi 9h-18h sur RDV"],
+      "note": 4.9,
+      "nombreAvis": 31,
+      "avis": [
+        {"auteur": "Nadia F.", "note": 5, "date": "2025-01-05", "commentaire": "Miraculeux avec mon bébé qui avait des coliques."}
+      ],
+      "besoinsAssocies": ["pediatrie", "post_partum"]
+    },
+    {
+      "id": "pro-004",
+      "nom": "Grondin",
+      "prenom": "Isabelle",
+      "specialite": "Psychologue",
+      "categorie": "post_partum",
+      "zone": "Ouest",
+      "ville": "Saint-Paul",
+      "telephone": "0262 AA AA AA",
+      "email": "psy.grondin@sante974.re",
+      "description": "Psychologue clinicienne spécialisée périnatale — baby blues, dépression post-partum.",
+      "specialisations": ["Baby blues", "Dépression post-partum", "Accompagnement parental"],
+      "disponibilites": ["Mercredi 10h-18h", "Vendredi 10h-16h"],
+      "note": 4.7,
+      "nombreAvis": 15,
+      "avis": [
+        {"auteur": "Pauline T.", "note": 5, "date": "2024-11-20", "commentaire": "M'a beaucoup aidée après la naissance."}
+      ],
+      "besoinsAssocies": ["sante_mentale", "post_partum", "couple"]
+    },
+    {
+      "id": "pro-005",
+      "nom": "Payet",
+      "prenom": "Christelle",
+      "specialite": "Diététicienne-nutritionniste",
+      "categorie": "avant_grossesse",
+      "zone": "Nord",
+      "ville": "Sainte-Marie",
+      "telephone": "0692 BB BB BB",
+      "email": "diete.payet@nutrition974.re",
+      "description": "Diététicienne spécialisée en nutrition périnatale et alimentation locale réunionnaise.",
+      "specialisations": ["Nutrition grossesse", "Alimentation allaitement", "Produits locaux"],
+      "disponibilites": ["Lundi-Vendredi 9h-17h"],
+      "note": 4.5,
+      "nombreAvis": 22,
+      "avis": [
+        {"auteur": "Claire B.", "note": 4, "date": "2024-10-10", "commentaire": "De bons conseils adaptés à nos produits locaux."}
+      ],
+      "besoinsAssocies": ["nutrition", "fertilite", "allaitement"]
+    },
+    {
+      "id": "pro-006",
+      "nom": "Dijoux",
+      "prenom": "Annick",
+      "specialite": "Doula",
+      "categorie": "accouchement",
+      "zone": "Hauts",
+      "ville": "Cilaos",
+      "telephone": "0692 CC CC CC",
+      "email": "doula.annick@gmail.com",
+      "description": "Doula certifiée — accompagnement global grossesse, naissance et post-partum.",
+      "specialisations": ["Accompagnement naissance physiologique", "Soutien post-partum", "Allaitement"],
+      "disponibilites": ["Sur rendez-vous 7j/7"],
+      "note": 5.0,
+      "nombreAvis": 9,
+      "avis": [
+        {"auteur": "Séverine M.", "note": 5, "date": "2025-01-08", "commentaire": "Annick a transformé mon accouchement. Une présence inestimable."}
+      ],
+      "besoinsAssocies": ["preparation_naissance", "allaitement", "post_partum"]
+    }
+  ],
+
+  "articles": [
+    {
+      "id": "art-001",
+      "categorie": "Nutrition",
+      "titre": "Manger local pendant la grossesse à La Réunion",
+      "extrait": "Découvrez comment les produits du terroir réunionnais — brèdes, chouchou, fruit à pain — couvrent vos besoins nutritionnels pendant la grossesse.",
+      "contenu": "La Réunion regorge de fruits et légumes locaux exceptionnellement nutritifs pour les femmes enceintes...\n\nLes brèdes morelles, riches en fer et en folates, sont particulièrement recommandées au premier trimestre. Le chouchou (christophine) apporte fibres et potassium. Le fruit à pain est une excellente source de glucides complexes.\n\nConsommez quotidiennement : des légumes verts (brèdes, haricots verts lonbé), des fruits de saison (mangue, papaye, ananas), des protéines locales (poisson frais, lentilles corail).\n\nÉvitez : la papaye verte crue (risque utérotonique), les poissons à forte teneur en mercure (espadon, marlin).",
+      "auteur": "Christelle Payet, Diététicienne",
+      "date": "2025-01-08",
+      "tempsLecture": 5,
+      "tags": ["nutrition", "local", "grossesse", "reunion"],
+      "icone": "🥗"
+    },
+    {
+      "id": "art-002",
+      "categorie": "Santé mentale",
+      "titre": "Baby blues vs dépression post-partum : comprendre la différence",
+      "extrait": "Après l'accouchement, les émotions sont souvent intenses. Comment distinguer le baby blues normal de la dépression post-partum qui nécessite un suivi ?",
+      "contenu": "Le baby blues touche 50 à 80% des jeunes mères dans les premiers jours suivant l'accouchement...\n\nSes caractéristiques : pleurs sans raison apparente, irritabilité, anxiété légère, fatigue — il disparaît spontanément en 2 semaines maximum.\n\nLa dépression post-partum est différente : elle persiste au-delà de 2 semaines, s'intensifie, et peut inclure des pensées intrusives, un sentiment d'incapacité, une distanciation avec le bébé.\n\nSi vous vous reconnaissez dans ces symptômes : parlez-en à votre sage-femme, médecin ou appelez le 3114 (numéro national prévention suicide).\n\nÀ La Réunion : le réseau REPERE accompagne les familles. Appelez le 0262 40 50 60.",
+      "auteur": "Isabelle Grondin, Psychologue",
+      "date": "2025-01-05",
+      "tempsLecture": 7,
+      "tags": ["sante_mentale", "post_partum", "baby_blues"],
+      "icone": "🧠"
+    },
+    {
+      "id": "art-003",
+      "categorie": "Grossesse",
+      "titre": "Le projet de naissance : pourquoi et comment le rédiger ?",
+      "extrait": "Le projet de naissance vous permet d'exprimer vos souhaits pour votre accouchement. Un outil de communication essentiel avec l'équipe médicale.",
+      "contenu": "Le projet de naissance est un document que vous rédigez pendant la grossesse pour exprimer vos préférences pour l'accouchement...\n\nIl peut inclure : vos préférences sur la gestion de la douleur (péridurale ou non), les personnes présentes, la position d'accouchement, le peau-à-peau immédiat, l'allaitement dès la naissance.\n\nComment le rédiger : discutez-en avec votre sage-femme lors des séances de préparation. Restez flexible — l'accouchement est imprévisible.",
+      "auteur": "Sophie Martin, Sage-femme",
+      "date": "2024-12-20",
+      "tempsLecture": 6,
+      "tags": ["grossesse", "accouchement", "projet_naissance"],
+      "icone": "📋"
+    },
+    {
+      "id": "art-004",
+      "categorie": "Allaitement",
+      "titre": "Démarrer l'allaitement : les premières 48h sont décisives",
+      "extrait": "Les deux premiers jours après la naissance conditionnent souvent la réussite de l'allaitement. Voici les clés pour bien démarrer.",
+      "contenu": "Le colostrum, ce premier lait jaune doré, est produit dès les premières heures...\n\nConseils pratiques : peau-à-peau immédiat en salle de naissance, première mise au sein dans l'heure suivant la naissance, tétées à la demande (8 à 12 fois par 24h).\n\nSignes que tout va bien : le bébé mouille 6 couches par jour à partir du J5, retrouve son poids de naissance à J10-J14.\n\nEn cas de difficulté : consultez une consultante en lactation IBCLC. À La Réunion, plusieurs professionnelles sont référencées dans notre annuaire.",
+      "auteur": "Sophie Martin, Sage-femme",
+      "date": "2024-12-15",
+      "tempsLecture": 8,
+      "tags": ["allaitement", "naissance", "nouveau_ne"],
+      "icone": "🤱"
+    },
+    {
+      "id": "art-005",
+      "categorie": "Post-partum",
+      "titre": "Rééducation périnéale : tout ce qu'il faut savoir",
+      "extrait": "Prescrite après tout accouchement, la rééducation périnéale est essentielle. Pourtant 40% des femmes ne la font pas. Pourquoi c'est une erreur ?",
+      "contenu": "Le périnée subit des contraintes immenses pendant la grossesse et l'accouchement...\n\nLa rééducation est prescrite pour toutes les femmes après l'accouchement : 10 séances remboursées à 100% par l'Assurance Maladie.\n\nElle peut être réalisée par une sage-femme ou un kinésithérapeute périnéal. Les séances débutent idéalement à 6-8 semaines après l'accouchement.\n\nBénéfices : prévention des fuites urinaires, amélioration de la vie sexuelle, récupération musculaire, prévention des prolapsus.",
+      "auteur": "Sophie Martin, Sage-femme",
+      "date": "2024-12-10",
+      "tempsLecture": 6,
+      "tags": ["post_partum", "reeducation", "sante"],
+      "icone": "💪"
+    },
+    {
+      "id": "art-006",
+      "categorie": "Accouchement",
+      "titre": "Maternités à La Réunion : choisir son lieu d'accouchement",
+      "extrait": "CHU Sud, CHU Nord, Clinique Sainte-Clotilde... Chaque établissement a ses spécificités. Guide pour choisir en fonction de votre situation.",
+      "contenu": "À La Réunion, vous avez le choix entre plusieurs maternités de différents niveaux...\n\nNiveau 1 : maternités pour les grossesses sans facteur de risque. Niveau 2 : grossesses à risque modéré, prématurité modérée. Niveau 3 (CHU) : grossesses à haut risque, grande prématurité.\n\nCHU Réunion Nord (Saint-Denis) : niveau 3, service de réanimation néonatale. CHU Réunion Sud (Saint-Pierre) : niveau 3. Clinique Sainte-Clotilde (Saint-Denis) : niveau 2.\n\nConseil : visitez la maternité en cours de grossesse lors d'une journée portes ouvertes.",
+      "auteur": "Équipe Coordinateur de Vie",
+      "date": "2024-12-05",
+      "tempsLecture": 5,
+      "tags": ["accouchement", "maternite", "reunion"],
+      "icone": "🏥"
+    }
+  ],
+
+  "faq": [
+    {
+      "id": "faq-001",
+      "question": "Comment trouver une sage-femme libérale près de chez moi à La Réunion ?",
+      "reponse": "Utilisez notre annuaire filtré par zone géographique. Vous pouvez également contacter l'Ordre des Sages-Femmes de La Réunion ou votre médecin traitant pour des recommandations personnalisées.",
+      "auteur": "Sophie Martin, Sage-femme",
+      "dateReponse": "2025-01-10",
+      "repondue": true
+    },
+    {
+      "id": "faq-002",
+      "question": "Quelles aides financières existent pour les familles à La Réunion ?",
+      "reponse": "Plusieurs aides sont disponibles : PAJE (Prestation d'Accueil du Jeune Enfant), Allocation de Base CAF, Prime à la naissance. La CAF de La Réunion propose également des accompagnements spécifiques. Rendez-vous sur caf.fr ou contactez votre CAF locale.",
+      "auteur": "Équipe Coordinateur de Vie",
+      "dateReponse": "2025-01-08",
+      "repondue": true
+    },
+    {
+      "id": "faq-003",
+      "question": "Est-ce que l'application remplace les consultations médicales ?",
+      "reponse": "Non, absolument pas. L'application est un outil de coordination et d'information. Elle ne remplace en aucun cas un suivi médical professionnel. Pour toute question médicale, consultez votre sage-femme, médecin ou gynécologue.",
+      "auteur": "Dr. Marie-Hélène Techer",
+      "dateReponse": "2025-01-05",
+      "repondue": true
+    },
+    {
+      "id": "faq-004",
+      "question": "Comment fonctionne l'accès partenaire 'miroir' ?",
+      "reponse": null,
+      "auteur": "Utilisateur anonyme",
+      "dateReponse": null,
+      "repondue": false
+    },
+    {
+      "id": "faq-005",
+      "question": "Quels sont les signes d'alerte pendant la grossesse qui nécessitent d'appeler le 15 ?",
+      "reponse": "Appelez le 15 immédiatement en cas de : saignements abondants, douleurs abdominales intenses, absence de mouvements fœtaux après 28 SA, contractions régulières avant 37 SA, maux de tête violents avec troubles visuels, gonflement brutal du visage/mains.",
+      "auteur": "Sophie Martin, Sage-femme",
+      "dateReponse": "2025-01-03",
+      "repondue": true
+    }
+  ],
+
+  "forum": [
+    {
+      "id": "post-001",
+      "auteurId": "pat-002",
+      "auteurNom": "Sarah L.",
+      "categorie": "Post-partum",
+      "titre": "Douleurs à la rééducation périnéale, c'est normal ?",
+      "contenu": "Bonjour à toutes, j'ai commencé ma rééducation périnéale il y a 2 semaines et j'ai parfois des douleurs légères pendant les séances. Est-ce que c'est normal ? Merci",
+      "date": "2025-01-10",
+      "reponses": [
+        {
+          "auteurId": "pro-001",
+          "auteurNom": "Sophie M. (Sage-femme)",
+          "contenu": "Bonjour Sarah, quelques légères sensations sont normales au début, surtout si vous avez eu des points de suture. En revanche, si la douleur est importante, n'hésitez pas à en parler à votre praticienne. Chaque séance doit être adaptée à votre ressenti.",
+          "date": "2025-01-10"
+        }
+      ]
+    },
+    {
+      "id": "post-002",
+      "auteurId": "pat-001",
+      "auteurNom": "Camille D.",
+      "categorie": "Grossesse",
+      "titre": "Nausées au 2ème trimestre, vous avez des astuces ?",
+      "contenu": "Je suis à 22 SA et j'ai encore des nausées le matin. Mon médecin dit que c'est encore possible mais c'est épuisant. Des conseils ?",
+      "date": "2025-01-09",
+      "reponses": [
+        {
+          "auteurId": "pat-002",
+          "auteurNom": "Sarah L.",
+          "contenu": "J'avais le même problème ! Le gingembre en infusion m'a beaucoup aidée. Et manger des petites portions toutes les 2-3h plutôt que 3 repas.",
+          "date": "2025-01-09"
+        }
+      ]
+    }
+  ],
+
+  "offres": {
+    "btoc": [
+      {
+        "id": "projet-bebe",
+        "nom": "Pack Projet Bébé",
+        "prix": 19,
+        "periodicite": "mois",
+        "cible": "avant_grossesse",
+        "couleur": "#C4C45C",
+        "icone": "🌱",
+        "description": "Votre compagnon pour préparer l'arrivée de bébé en toute sérénité.",
+        "avantages": [
+          "Référencement de pros fertilité (sage-femme, gynéco, naturopathe)",
+          "Messagerie directe avec professionnels partenaires",
+          "Podcast fertilité & charge mentale",
+          "Newsletter dédiée cycle, alimentation, émotions",
+          "Calendrier cycle intégré",
+          "Accès forum privé « Projet bébé »"
+        ]
+      },
+      {
+        "id": "grossesse",
+        "nom": "Pack Grossesse",
+        "prix": 24,
+        "periodicite": "trimestre",
+        "cible": "pendant_grossesse",
+        "couleur": "#FF535A",
+        "icone": "🤰",
+        "populaire": true,
+        "description": "Un accompagnement complet trimestre par trimestre.",
+        "avantages": [
+          "T1 : ressources fausse couche, checklist médicale, mini guide nutritionnel",
+          "T1 : messagerie prioritaire & newsletter hebdomadaire",
+          "T2-T3 : préparation projet de naissance",
+          "T2-T3 : podcasts et sessions en direct",
+          "Accompagnement retour à la maison",
+          "Conseils allaitement, sommeil, démarches administratives",
+          "Checklist maternité complète"
+        ]
+      },
+      {
+        "id": "retour-maison",
+        "nom": "Pack Retour à la Maison",
+        "prix": 29,
+        "periodicite": "mois",
+        "cible": "post_natal",
+        "couleur": "#FFAF34",
+        "icone": "🏠",
+        "description": "Un soutien complet jusqu'à 12 mois après la naissance.",
+        "avantages": [
+          "Accompagnement post-partum : santé mentale, rééducation périnéale",
+          "Soutien couple et charge mentale",
+          "Démarches administratives guidées",
+          "Réseau de professionnels post-partum",
+          "Podcasts & ressources développement, sommeil, diversification",
+          "Newsletter adaptée à l'âge du bébé",
+          "Courbes de croissance personnalisées",
+          "Lives d'experts mensuels",
+          "Durée possible jusqu'à 12 mois",
+          "Option Couple : +9€/mois"
+        ]
+      },
+      {
+        "id": "fondatrice",
+        "nom": "Parcours Fondatrice",
+        "prix": 29,
+        "periodicite": "mois",
+        "cible": "avant_grossesse",
+        "couleur": "#FF535A",
+        "icone": "👑",
+        "badge": "Accès Prioritaire",
+        "description": "Le programme complet avec un tarif bloqué pour les pionnières.",
+        "avantages": [
+          "Tarif bloqué à vie",
+          "15% de réduction sur les packs suivants",
+          "Add-on gratuit pendant 6 mois",
+          "Badge Fondatrice exclusif",
+          "Accès à des contenus exclusifs en avant-première",
+          "Programme 18 à 24 mois",
+          "Accès prioritaire à toutes les nouvelles fonctionnalités"
+        ],
+        "conditions": "Accessible uniquement avant grossesse"
+      }
+    ],
+    "btob": [
+      {
+        "id": "structure-medicale",
+        "nom": "Structures Médicales",
+        "prix": 149,
+        "periodicite": "mois",
+        "icone": "🏥",
+        "description": "Maternités, cliniques, centres de santé"
+      },
+      {
+        "id": "medical-specialise",
+        "nom": "Médical Spécialisé",
+        "prix": 99,
+        "periodicite": "mois",
+        "icone": "👨‍⚕️",
+        "description": "Gynécologues, sages-femmes, pédiatres"
+      },
+      {
+        "id": "paramedical",
+        "nom": "Paramédical",
+        "prix": 69,
+        "periodicite": "mois",
+        "icone": "💊",
+        "description": "Kiné, ostéopathes, diététiciens, psychologues"
+      },
+      {
+        "id": "accompagnement",
+        "nom": "Accompagnement",
+        "prix": 49,
+        "periodicite": "mois",
+        "icone": "🤝",
+        "description": "Doulas, coachs, sophrologues"
+      },
+      {
+        "id": "ateliers",
+        "nom": "Ateliers",
+        "prix": 29,
+        "periodicite": "mois",
+        "icone": "📚",
+        "description": "Animateurs d'ateliers périnataux"
+      }
+    ]
+  },
+
+  "communes": [
+    "Saint-Denis", "Saint-Paul", "Saint-Pierre", "Le Tampon", "Saint-Louis",
+    "Saint-André", "Saint-Leu", "Sainte-Marie", "Saint-Joseph", "La Possession",
+    "Le Port", "Saint-Benoît", "Sainte-Suzanne", "Saint-Philippe", "Sainte-Rose",
+    "Entre-Deux", "Saint-François", "Petite-Île", "Bras-Panon", "La Plaine-des-Palmistes",
+    "Cilaos", "Salazie", "Les Avirons", "L'Étang-Salé"
+  ],
+
+  "zonesGeographiques": [
+    {"id": "nord", "label": "Nord", "communes": ["Saint-Denis", "Sainte-Marie", "Sainte-Suzanne", "Saint-André"]},
+    {"id": "sud", "label": "Sud", "communes": ["Saint-Pierre", "Le Tampon", "Saint-Louis", "Saint-Joseph", "Entre-Deux", "Saint-François", "Petite-Île", "Les Avirons", "L'Étang-Salé"]},
+    {"id": "est", "label": "Est", "communes": ["Saint-Benoît", "Bras-Panon", "Sainte-Rose", "Saint-Philippe", "La Plaine-des-Palmistes"]},
+    {"id": "ouest", "label": "Ouest", "communes": ["Saint-Paul", "Saint-Leu", "La Possession", "Le Port"]},
+    {"id": "hauts", "label": "Hauts", "communes": ["Cilaos", "Salazie"]}
+  ],
+
+  "stadesPerinataux": [
+    {"id": "projet_bebe", "label": "Projet Bébé", "description": "Je souhaite concevoir"},
+    {"id": "pma_fiv", "label": "PMA / FIV", "description": "Je suis en parcours PMA"},
+    {"id": "T1", "label": "1er Trimestre", "description": "Semaines 1 à 14"},
+    {"id": "T2", "label": "2ème Trimestre", "description": "Semaines 15 à 27"},
+    {"id": "T3", "label": "3ème Trimestre", "description": "Semaines 28 à 41"},
+    {"id": "post_natal", "label": "Post-natal", "description": "J'ai accouché"}
+  ],
+
+  "besoins": [
+    {"id": "suivi_medical", "label": "Suivi médical", "icone": "🏥"},
+    {"id": "preparation_naissance", "label": "Préparation à la naissance", "icone": "🧘"},
+    {"id": "nutrition", "label": "Nutrition & diététique", "icone": "🥗"},
+    {"id": "sante_mentale", "label": "Santé mentale & émotions", "icone": "🧠"},
+    {"id": "post_partum", "label": "Post-partum", "icone": "🏠"},
+    {"id": "allaitement", "label": "Allaitement", "icone": "🤱"},
+    {"id": "fertilite", "label": "Fertilité", "icone": "🌱"},
+    {"id": "couple", "label": "Vie de couple", "icone": "💑"},
+    {"id": "pediatrie", "label": "Pédiatrie & bébé", "icone": "👶"},
+    {"id": "suivi_cycle", "label": "Suivi du cycle", "icone": "📅"},
+    {"id": "reeducation_perineale", "label": "Rééducation périnéale", "icone": "💪"}
+  ],
+
+  "partenairesParStade": {
+    "avant_grossesse": [
+      "Gynécologue", "Sage-femme", "Médecin généraliste",
+      "Spécialiste fertilité / PMA", "Psychologue", "Diététicien / nutritionniste"
+    ],
+    "pendant_grossesse": [
+      "Sage-femme", "Gynécologue obstétricien", "Échographie / imagerie médicale",
+      "Doula", "Sophrologue / préparation à la naissance", "Massage prénatal"
+    ],
+    "accouchement": [
+      "Maternités / cliniques", "Maisons de naissance", "Doula"
+    ],
+    "post_partum": [
+      "Sage-femme (suivi & rééducation périnéale)", "Kiné périnéal",
+      "Psychologue (baby blues / dépression)", "Consultante en lactation",
+      "Ostéopathe", "Coach post-partum", "Naturopathe / diététicien périnatal"
+    ],
+    "bebe": [
+      "Pédiatre", "Ostéopathe bébé", "Consultante sommeil",
+      "Psychomotricien", "Ateliers premiers secours bébé"
+    ]
+  },
+
+  "programmeAlimentaire": {
+    "T1": {
+      "objectif": "Prévenir les carences en folates et iode, gérer les nausées",
+      "aliments": [
+        {"nom": "Brèdes morelles", "apport": "Fer, folates", "emoji": "🥬"},
+        {"nom": "Lentilles corail", "apport": "Protéines, fer", "emoji": "🫘"},
+        {"nom": "Gingembre frais", "apport": "Anti-nausées naturel", "emoji": "🌿"},
+        {"nom": "Ananas local", "apport": "Vitamine C, digestif", "emoji": "🍍"},
+        {"nom": "Poisson blanc local", "apport": "Protéines, oméga-3", "emoji": "🐟"}
+      ]
+    },
+    "T2": {
+      "objectif": "Couvrir les besoins en calcium, fer et protéines pour la croissance fœtale",
+      "aliments": [
+        {"nom": "Chouchou (christophine)", "apport": "Fibres, potassium, faible calories", "emoji": "🥗"},
+        {"nom": "Fruit à pain", "apport": "Glucides complexes, potassium", "emoji": "🍞"},
+        {"nom": "Haricots verts lonbé", "apport": "Fibres, magnésium", "emoji": "🫛"},
+        {"nom": "Mangue", "apport": "Vitamines A et C", "emoji": "🥭"},
+        {"nom": "Yaourt local", "apport": "Calcium, probiotiques", "emoji": "🥛"}
+      ]
+    },
+    "T3": {
+      "objectif": "Préparer le corps à l'accouchement, éviter les œdèmes, stock fer",
+      "aliments": [
+        {"nom": "Camaron (crevette)", "apport": "Protéines maigres, zinc", "emoji": "🦐"},
+        {"nom": "Patate douce", "apport": "Bêta-carotène, fibres", "emoji": "🍠"},
+        {"nom": "Papaye mûre", "apport": "Enzymes digestives, vitamine C", "emoji": "🧡"},
+        {"nom": "Coco local", "apport": "Acides gras, hydratation", "emoji": "🥥"},
+        {"nom": "Curcuma frais", "apport": "Anti-inflammatoire naturel", "emoji": "🌿"}
+      ]
+    },
+    "post_natal": {
+      "objectif": "Favoriser la lactation, récupération et énergie",
+      "aliments": [
+        {"nom": "Rougail saucisse (léger)", "apport": "Protéines, réconfort local", "emoji": "🍖"},
+        {"nom": "Soupe brèdes", "apport": "Minéraux, hydratation, fer", "emoji": "🍲"},
+        {"nom": "Curcuma-gingembre", "apport": "Anti-inflammatoire, lactation", "emoji": "🌿"},
+        {"nom": "Lait de coco", "apport": "Graisses pour la lactation", "emoji": "🥛"},
+        {"nom": "Dattes Medjool", "apport": "Énergie rapide, fer", "emoji": "🌴"}
+      ]
+    }
+  }
+}
